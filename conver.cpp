@@ -7,6 +7,7 @@ void convert(int x){
         return;
     }
     if(x==1){
+        printf("%d",1);
         return;
     }
     convert(x/2);
