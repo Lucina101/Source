@@ -3,12 +3,13 @@
 using namespace std;
 int a[100],n,ans;
 void genpartition(int x,int k){
-if(x==0){//if(check(a,k)==0){
+if(x==0){
     for(int i=1;i<=k;i++){
     printf("%d ",a[i]);
     }
     ans++;
-    printf("\n");//}
+    printf("\n");
+}
 return;
 }
 if(k==0) a[0]=x;
