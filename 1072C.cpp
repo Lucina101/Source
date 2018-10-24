@@ -1,6 +1,4 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
 const int maxn=2e5;
 int x[maxn],y[maxn],a,b,g,sum,l,r,sum1;
 int main(){
@@ -31,6 +29,3 @@ int main(){
         printf("%d ",y[i]);
     printf("\n");
 }
-
-
-
