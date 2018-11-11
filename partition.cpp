@@ -2,7 +2,7 @@
 #include<algorithm>
 using namespace std;
 int a[100],n,ans;
-void genpartition(int x,int k){
+void partition(int x,int k){
 if(x==0){
     for(int i=1;i<=k;i++){
     printf("%d ",a[i]);
@@ -20,6 +20,6 @@ for(int j=min(a[k],x);j>=1;j--){
 }
 int main(){
 scanf("%d",&n);
-genpartition(n,0);
+partition(n,0);
 printf("%d",ans);
 }
