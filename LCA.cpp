@@ -38,6 +38,8 @@ int lca(int u,int v){
 }
 
 int main(){
+    //make sure
+    //must have->tout[0]=inf;
     scanf("%d",&n);
     for(int i=1;i<n;i++){
         scanf("%d%d",&x,&y);
