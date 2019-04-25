@@ -40,6 +40,8 @@ int main(){
 		scanf("%d),&a[i][j]);
    for(int i=1;i<=n;i++){
 	if(!a[i][i]){
+		//if the number in diagonal=0
+		//find another row to swap with it
 		ma=0;
 		for(int j=i+1;j<=n&&!ma;j++)
 			if(a[j][i]) ma=j;
@@ -51,11 +53,12 @@ int main(){
 		if(!tmp) continue;
 		for(int k=i;k<=n+1;k++)
                 a[j][k]=sub(mul(a[j][k],a[i][i]),mul(a[i][k],tmp));
+		//subtraction with other rows
 		}
 	}
 	for(int i=n;i>=1;i--){
 		for(int j=i+1;j<=n;j++)
             a[i][n+1]=sub(a[i][n+1],mul(ans[j],a[i][j]));
-			ans[i]=(mul(a[i][n+1],power(a[i][i],mod-2)));
+		ans[i]=(mul(a[i][n+1],power(a[i][i],mod-2)));//multiply inverse at the end.
 	}	
 }
