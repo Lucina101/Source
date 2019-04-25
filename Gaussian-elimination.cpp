@@ -54,7 +54,7 @@ int main(){
                 a[j][k]=sub(mul(a[j][k],a[i][i]),mul(a[i][k],tmp));
 		}
 	}
-	for(int i=n;i;i--){
+	for(int i=n;i>=1;i--){
 		for(int j=i+1;j<=n;j++)
             a[i][n+1]=sub(a[i][n+1],mul(ans[j],a[i][j]));
 			ans[i]=(mul(a[i][n+1],power(a[i][i],mod-2)));
