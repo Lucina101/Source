@@ -3,8 +3,8 @@ Gaussian-elimination code
 */
 #include<bits/stdc++.h>
 using namespace std;
-const int mod=1e9+7, maxn=100;
-int a[maxn][maxn],ans[maxn],n;
+const int mod=1e9+7, N=100;
+int a[N][N],ans[N],n;
 int add(int a, int b) {
   a += b;
   if (a >= mod) a -= mod;
@@ -35,6 +35,9 @@ int power(int a,long long b) {
 
 int main(){
     scanf("%d",&n);
+	for(i=1;i<=n;i++)
+		for(int j=1;j<=n+1;j++)
+		scanf("%d),&a[i][j]);
     int ma,tmp;
     for(int i=1;i<=n;i++){
 		if(!a[i][i]){
@@ -60,5 +63,5 @@ int main(){
 			ans[i]=a[i][n+1]/a[i][i];
             */
 	}
-
+	
 }
