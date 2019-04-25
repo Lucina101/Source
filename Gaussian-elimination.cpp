@@ -59,9 +59,5 @@ int main(){
 		for(int j=i+1;j<=n;j++)
             a[i][n+1]=sub(a[i][n+1],mul(ans[j],a[i][j]));
 			ans[i]=(mul(a[i][n+1],power(a[i][i],mod-2)));
-			/*if normal version(no modulo)
-			ans[i]=a[i][n+1]/a[i][i];
-            */
-	}
-	
+	}	
 }
