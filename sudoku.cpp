@@ -1,3 +1,6 @@
+/*
+Sudoku solver
+*/
 #include<stdio.h>
 int sudokuboard[100][100],n,m,ans;
 int f(int p){
