@@ -44,8 +44,7 @@ int main(){
 		for(int j=i+1;j<=n&&!ma;j++)
 			if(a[j][i]) ma=j;
 			if(!ma) continue;
-			for(int j=i;j<=n+1;j++)
-			swap(a[ma][j],a[i][j]);
+			swap(a[ma],a[i]);
 		}
 	for(int j=i+1;j<=n;j++){
 		tmp=a[j][i];
