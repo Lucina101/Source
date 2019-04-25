@@ -34,11 +34,11 @@ int power(int a,long long b) {
 }
 
 int main(){
-    scanf("%d",&n);
+	scanf("%d",&n);
 	for(i=1;i<=n;i++)
 		for(int j=1;j<=n+1;j++)
 		scanf("%d),&a[i][j]);
-    for(int i=1;i<=n;i++){
+   for(int i=1;i<=n;i++){
 	if(!a[i][i]){
 		ma=0;
 		for(int j=i+1;j<=n&&!ma;j++)
