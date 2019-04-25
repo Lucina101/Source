@@ -4,7 +4,7 @@ Gaussian-elimination code
 #include<bits/stdc++.h>
 using namespace std;
 const int mod=1e9+7, N=100;
-int a[N][N],ans[N],n;
+int a[N][N],ans[N],n,ma,tmp;
 int add(int a, int b) {
   a += b;
   if (a >= mod) a -= mod;
@@ -38,20 +38,19 @@ int main(){
 	for(i=1;i<=n;i++)
 		for(int j=1;j<=n+1;j++)
 		scanf("%d),&a[i][j]);
-    int ma,tmp;
     for(int i=1;i<=n;i++){
-		if(!a[i][i]){
-			ma=0;
-			for(int j=i+1;j<=n&&!ma;j++)
-				if(a[j][i]) ma=j;
+	if(!a[i][i]){
+		ma=0;
+		for(int j=i+1;j<=n&&!ma;j++)
+			if(a[j][i]) ma=j;
 			if(!ma) continue;
 			for(int j=i;j<=n+1;j++)
-				swap(a[ma][j],a[i][j]);
+			swap(a[ma][j],a[i][j]);
 		}
-		for(int j=i+1;j<=n;j++){
-			tmp=a[j][i];
-			if(!tmp) continue;
-			for(int k=i;k<=n+1;k++)
+	for(int j=i+1;j<=n;j++){
+		tmp=a[j][i];
+		if(!tmp) continue;
+		for(int k=i;k<=n+1;k++)
                 a[j][k]=sub(mul(a[j][k],a[i][i]),mul(a[i][k],tmp));
 		}
 	}
