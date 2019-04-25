@@ -61,4 +61,5 @@ int main(){
             a[i][n+1]=sub(a[i][n+1],mul(ans[j],a[i][j]));
 		ans[i]=(mul(a[i][n+1],power(a[i][i],mod-2)));//multiply inverse at the end.
 	}	
+	//ans[i] is the number of i-th variable.
 }
