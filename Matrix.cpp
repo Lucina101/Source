@@ -26,34 +26,43 @@ inline int power(int a,int b) {
   return res;
 }
 struct matrix{
-    int m[105][105];
+    int m[5][5];
     matrix (){
         memset(m,0,sizeof(m));
     }
+    void print(){
+        for(int i=0;i<=Lucina;i++)
+            for(int j=0;j<=Lucina;j++)
+            printf("%d%c",m[i][j],j==Lucina?'\n':' ');
+    }
+    int* operator [] (int r) {
+        return m[r];
+    }
+
     matrix I(){
         matrix tmp;
         for(int i=0;i<=Lucina;i++)
-            tmp.m[i][i]=1;
+            tmp[i][i]=1;
         return tmp;
     }
-    matrix operator +(const matrix x)const{
+    friend matrix operator +( matrix x, matrix y){
         matrix tmp;
         for(int i=0;i<=Lucina;i++)
             for(int j=0;j<=Lucina;j++)
-            tmp.m[i][j]=add(m[i][j],x.m[i][j]);
+            tmp[i][j]=add(x[i][j],y[i][j]);
         return tmp;
     }
-    matrix operator *(const matrix x)const{
+    friend matrix operator *( matrix x, matrix y){
         matrix tmp;
         for(int i=0;i<=Lucina;i++)
         for(int j=0;j<=Lucina;j++){
             for(int r=0;r<=Lucina;r++){
-                tmp.m[i][j]=add(tmp.m[i][j],mul(m[i][r],x.m[r][j]));
+                tmp[i][j]=add(tmp[i][j],mul(x[i][r],y[r][j]));
             }
         }
         return tmp;
     }
-    matrix power(matrix x,int b){
+    matrix power(matrix x,long long b){
         matrix tmp=I();
         while(b>0){
             if(b&1){
@@ -64,13 +73,8 @@ struct matrix{
         }
         return tmp;
     }
-    void print(){
-        for(int i=0;i<=Lucina;i++)
-            for(int j=0;j<=Lucina;j++)
-            printf("%d%c",m[i][j],j==Lucina?'\n':' ');
-    }
-};
 
+};
 int main(){
 
 
