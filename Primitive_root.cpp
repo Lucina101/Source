@@ -52,6 +52,8 @@ int generator (int p) {
     return -1;
 }
 //end here
+// note that when you calculate recurrence over power of some prime
+// you need to calculate it modulo(p-1)!
 int main(){
     pp();
 
