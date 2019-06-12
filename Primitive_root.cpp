@@ -3,6 +3,11 @@ using namespace std;
 map<int,int> vals;
 const int g=(int) sqrt (mod + .0) + 1;
 //solve a^x=b(mod P)
+void pp(){
+    for (int p = g; p >= 1; --p)
+        vals[power(5,mul(p, g))] = p;
+    return;
+}
 int solve(int a, int b) {
     for (int q = 0;q<=g;++q) {
         int cur = mul(power(5, q), b);
@@ -48,6 +53,6 @@ int generator (int p) {
 }
 //end here
 int main(){
-  
+    pp();
 
 }
