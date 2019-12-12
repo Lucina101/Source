@@ -1,5 +1,5 @@
 
-///segment tree to find kth number of tree ; sample implementation
+///segment tree to find kth number on path on tree ; sample implementation
 struct node{
     int l , r , sum; // left id , right id , real sum
     node(): l(0), r(0), sum(){} 
@@ -34,7 +34,7 @@ void dfs(int nod, int pa, int cost){
     if(pa > 0){
         update(root[nod] = root[pa], 1, 100000, cost);
     }
-    for(auto i: a[nod]){
+    for(int i: a[nod]){
         if(i.first == pa) continue;
         dfs(i.first, nod, i.second);
     }
