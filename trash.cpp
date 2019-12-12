@@ -3,8 +3,8 @@
 struct node{
     int l , r , sum; // left id , right id , real sum
     node(): l(0), r(0), sum(){} 
-}f[nax * 2 * Log]; 
- 
+}f[nax * 2 * Log]; /// bound it properly
+ ///usually not greater than 2 * log memory
 void build(int x, int l, int r){
     f[x].sum = 0;
     if(l == r) return ;
@@ -12,7 +12,6 @@ void build(int x, int l, int r){
     f[x].l = ++cnt; build(f[x].l, l, mid);
     f[x].r = ++cnt; build(f[x].r, mid + 1, r);
 }
- 
 void update(int &x, int l, int r, int k){
     f[++ cnt] = f[x]; ///cnt is global id start with 0
     ++f[cnt].sum ; x = cnt;
@@ -21,7 +20,6 @@ void update(int &x, int l, int r, int k){
     if(k <= mid) update(f[x].l, l, mid, k);
     else update(f[x].r, mid + 1, r , k);
 }
- 
 int kth(int x, int y, int v, int l,int r, int k){
     if(l == r) return l;
     int res = f[f[x].l].sum + f[f[y].l].sum - 2 * f[f[v].l].sum;
@@ -29,7 +27,6 @@ int kth(int x, int y, int v, int l,int r, int k){
     if(res >= k) return kth(f[x].l, f[y].l, f[v].l, l, mid, k);
     else return kth(f[x].r, f[y].r , f[v].r, mid + 1 , r, k - res);
 }
-
 void dfs(int nod, int pa, int cost){
     if(pa > 0){
         update(root[nod] = root[pa], 1, 100000, cost);
